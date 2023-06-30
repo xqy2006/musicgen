@@ -34,7 +34,7 @@ jobs:
         git clone -b store https://github.com/xqy2006/musicgen.git "result"
         python3 -m pip install -U git+https://github.com/facebookresearch/audiocraft#egg=audiocraft
         python main.py $BODY $ID
-        cp $ID.wav ./result/music
+        ls
       env:
           BODY: ${{ github.event.issue.body }}
           ID: ${{ github.event.issue.number }}
@@ -46,7 +46,7 @@ jobs:
       id: split
       with:
         string: ${{ github.event.issue.body }}
-        split-by: "歌词 \n "
+        split-by: "描述 \n "
     - uses: mad9000/actions-find-and-replace-string@2
       id: findandreplace
       with:
