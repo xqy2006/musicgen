@@ -1,6 +1,6 @@
 import sys
 import os
-input = sys.argv[1]
+input = sys.argv[1].split("\n")[-1]
 print(input,sys.argv[2])
 import torchaudio
 from audiocraft.models import MusicGen
