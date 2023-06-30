@@ -16,5 +16,5 @@ for idx, one_wav in enumerate(wav):
     audio_write(sys.argv[2], one_wav.cpu(), model.sample_rate, strategy="loudness", loudness_compressor=True)
 os.system("mkdir .\\result\\music")
 os.system("ls")
-os.system("cp "+sys.argv[2]+".wav ./result/music")
+os.system("cp "+sys.argv[2]+".wav ./result/music/")
 
