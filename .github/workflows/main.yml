@@ -34,7 +34,7 @@ jobs:
         git clone -b store https://github.com/xqy2006/musicgen.git "result"
         python3 -m pip install -U git+https://github.com/facebookresearch/audiocraft#egg=audiocraft
         python main.py $BODY $ID
-        
+        cp $ID.wav ./result/music
       env:
           BODY: ${{ github.event.issue.body }}
           ID: ${{ github.event.issue.number }}
