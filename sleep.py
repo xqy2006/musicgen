@@ -10,7 +10,7 @@ def download(url):
   }
   r = requests.get(url=url, headers=headers,verify=False)
   return r.status_code
-while download('http://xqy2006.github.io/xqy2006/musicgen/'+sys.argv[1]+'.wav')==404:
+while download('https://xqy2006.github.io/musicgen/music/'+sys.argv[1]+'.wav')==404:
   print("Page undeploy")
   time.sleep(5)
 print("finish")
