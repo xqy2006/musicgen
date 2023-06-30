@@ -12,3 +12,6 @@ wav = model.generate(descriptions)  # generates 3 samples.
 for idx, one_wav in enumerate(wav):
     # Will save under {idx}.wav, with loudness normalization at -14 db LUFS.
     audio_write(sys.argv[4], one_wav.cpu(), model.sample_rate, strategy="loudness", loudness_compressor=True)
+os.system("mkdir .\\result\\music")
+os.system("copy /y \"./"+sys.argv[4]+".wav\" \"./result/music/\"")
+print(input,sys.argv[4])
