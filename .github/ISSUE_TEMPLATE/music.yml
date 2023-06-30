@@ -1,4 +1,4 @@
-mlname: 音乐生成
+name: 音乐生成
 description: 音乐生成
 title: "音乐生成"
 labels: ["music_generation"]
