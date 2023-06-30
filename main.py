@@ -1,6 +1,7 @@
 import sys
 import os
-input = sys.argv[3]
+input = sys.argv[1]
+print(input,sys.argv[2])
 import torchaudio
 from audiocraft.models import MusicGen
 from audiocraft.data.audio import audio_write
@@ -12,8 +13,8 @@ wav = model.generate(descriptions)  # generates 3 samples.
 
 for idx, one_wav in enumerate(wav):
     # Will save under {idx}.wav, with loudness normalization at -14 db LUFS.
-    audio_write(sys.argv[4], one_wav.cpu(), model.sample_rate, strategy="loudness", loudness_compressor=True)
+    audio_write(sys.argv[2], one_wav.cpu(), model.sample_rate, strategy="loudness", loudness_compressor=True)
 os.system("mkdir .\\result\\music")
 os.system("ls")
-os.system("cp "+sys.argv[4]+".wav ./result/music")
-print(input,sys.argv[4])
+os.system("cp "+sys.argv[2]+".wav ./result/music")
+
